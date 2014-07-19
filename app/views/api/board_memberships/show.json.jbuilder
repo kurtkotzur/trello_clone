@@ -1,0 +1,1 @@
+json.partial!("board_membership", board_membership: @board_membership)

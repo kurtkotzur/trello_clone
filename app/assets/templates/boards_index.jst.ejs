@@ -1,0 +1,13 @@
+<h2>Boards</h2>
+
+<ul>
+  <% boards.each( function (board) {  %>
+    <li>
+      <a href="#/boards/<%= board.get('id') %>">
+        <%= board.escape('title') %>
+      </a>
+    </li>
+  <% }); %>
+</ul>
+
+<a href="#/boards/new">Create new board</a>

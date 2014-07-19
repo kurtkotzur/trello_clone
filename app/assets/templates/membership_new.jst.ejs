@@ -1,0 +1,10 @@
+<h3>New Member</h3>
+
+<form>
+  <input type="hidden" name="board_membership[board_id]" value="<%= board.escape("id") %>">
+  
+  <label for="user-input">User Email</label>
+  <input type="text" name="board_membership[email]" id="user-input">
+  
+  <button>Submit</button>
+</form>
