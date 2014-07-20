@@ -3,7 +3,7 @@ TrelloClone.Views.CardShow = Backbone.View.extend({
   
   events: {
     "click button.delete-card": "deleteCard",
-    "click": "handleMouseEnter",
+    "mouseenter": "handleMouseEnter",
     "mouseleave": "handleMouseLeave"
   },
   
@@ -13,18 +13,17 @@ TrelloClone.Views.CardShow = Backbone.View.extend({
   },
   
   render: function () {
+    debugger
     var renderedContent = this.template({ card: this.model });
     this.$el.html(renderedContent);
     return this;
   },
   
   handleMouseEnter: function (event) {
-    alert("hello");
     $(event.currentTarget).find(".delete-card").toggleClass("hidden"); 
   },
   
   handleMouseLeave: function (event) {
-    alert("hello")
     $(event.currentTarget).find(".delete-card").toggleClass("hidden"); 
   }
   
