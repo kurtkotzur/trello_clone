@@ -1,12 +1,12 @@
-TrelloClone.Views.ListNew = Backbone.View.extend({
-  template: JST["list_new"],
+TrelloClone.Views.CardNew = Backbone.View.extend({ 
+  template: JST["card_new"],
   
   events: {
     "submit form": "submit"
   },
   
   render: function () {
-    var renderedContent = this.template({ board: this.model });
+    var renderedContent = this.template({ list: this.model });
     this.$el.html(renderedContent);
     
     return this;
@@ -16,11 +16,11 @@ TrelloClone.Views.ListNew = Backbone.View.extend({
     event.preventDefault();
 
     var params = $(event.currentTarget).serializeJSON();
-    var list = new TrelloClone.Models.List(params["list"]);
+    var card = new TrelloClone.Models.Card(params["card"]);
     var that = this;
-    list.save({}, {
+    card.save({}, {
       success: function () {
-        that.model.lists().add(list);
+        that.model.cards().add(card)
         that.render();
       }
     });

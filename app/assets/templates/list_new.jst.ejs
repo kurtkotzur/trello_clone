@@ -1,7 +1,7 @@
 <h3>New List</h3>
 
 <form>
-  <input type="hidden" name="list[board_id]" value="<%= board.escape("id") %>">
+  <input type="hidden" name="list[board_id]" value="<%= board.get("id") %>">
   
   <label for="list-title-input">Title</label>
   <input type="text" name="list[title]" id="list-title-input">

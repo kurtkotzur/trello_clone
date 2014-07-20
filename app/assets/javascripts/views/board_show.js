@@ -35,17 +35,6 @@ TrelloClone.Views.BoardShow = Backbone.CompositeView.extend({
     this.$el.html(renderedContent);
     this.attachSubviews();
     
-    
-    //TODO: change to use nested composite view
-    var that = this;
-    this.model.lists().each(function (list) {
-      list.cards().each(function (card) {
-       var cardView = new TrelloClone.Views.CardShow({ model: card });
-       list.$el.append(cardView.render().$el); 
-      });
-      
-    });
-    
     return this;
   }
 });
