@@ -1,3 +1,6 @@
-<li>
-  <%= card.escape("title") %>
-</li>
+<div class="card list-group-item">
+  
+  <h5><%= card.escape("title")%></h5>
+  <p><%= card.escape("description") %></p>
+  <button class="delete-card">Delete</button>
+</div>
