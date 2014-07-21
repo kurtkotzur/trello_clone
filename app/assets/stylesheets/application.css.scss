@@ -16,7 +16,35 @@
 @import "bootstrap";
 @import "font-awesome";
 
+.ui-sortable-helper {
+  transform: rotate(8deg);
+  box-shadow: 10px 5px 10px #888888;
+}
+
+.list {
+  width: 220px;
+  margin: 5px;
+  background-color: ghostwhite;
+}
+
+.list-new {
+  margin: 5px;
+}
+
+.card {
+  width: 185px;
+  margin: 2px;
+}
+
+
+.board-header {
+  width: 300px;
+}
+
 .list {
   float: left;
 }
 
+.delete-board, .delete-card, .delete-list {
+  float: right;
+}

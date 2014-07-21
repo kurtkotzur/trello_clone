@@ -1,13 +1,8 @@
-<h3>New List</h3>
-
 <form>
   <input type="hidden" name="list[board_id]" value="<%= board.get("id") %>">
+  <input type="hidden" name= >
   
-  <label for="list-title-input">Title</label>
   <input type="text" name="list[title]" id="list-title-input">
   
-  <label for="list-ord-input">Rank</label>
-  <input type="number" step="1" name="list[ord]">
-  
-  <button>Submit</button>
+  <button class="btn btn-default btn-sm">Add List</button>
 </form>

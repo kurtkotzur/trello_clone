@@ -1,22 +1,9 @@
-<h5>New Card</h5>
-
 <form class='new-card-form' role="form">
   <input type="hidden" name="card[list_id]" value="<%= list.get("id") %>">
   
   <div class="form-group">
-    <label for="card-title-input">Title</label>
-    <input class="form-control" type="text" name="card[title]" id="card-title-input">
-  </div>
-  
-  <div class="form-group">
-    <label for="card-ord-input">Rank</label>
-    <input class="form-control" type="number" step="1" name="card[ord]" id="card-ord-input">
-  </div>
-  
-  <div class="form-group">
     <label for="card-description-input">Description</label>
-    <textarea class="form-control" name="card[description]" id="card-description-input"></textarea>
+    <textarea class="form-control description-input" name="card[title]" id="card-description-input"></textarea>
   </div>
   
-  <button class="btn btn-default">Submit</button>
 </form>

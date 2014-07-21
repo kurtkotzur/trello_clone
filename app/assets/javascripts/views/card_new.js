@@ -2,7 +2,7 @@ TrelloClone.Views.CardNew = Backbone.View.extend({
   template: JST["card_new"],
   
   events: {
-    "submit form": "createCard"
+    "keydown textarea.description-input": "createCard"
   },
   
   render: function () {
@@ -12,15 +12,19 @@ TrelloClone.Views.CardNew = Backbone.View.extend({
   },
   
   createCard: function (event) {
-    event.preventDefault();
-    var params = $(event.currentTarget).serializeJSON();
-    var card = new TrelloClone.Models.Card(params["card"]);
-    var that = this;
-    card.save({}, {
-      success: function () {
-        that.model.cards().add(card)
-        that.render();
-      }
-    });
+    if (event.keyCode === 13) {
+      event.preventDefault();
+      var params = $(".new-card-form").serializeJSON();
+      var card = new TrelloClone.Models.Card(params["card"]);
+      var that = this;
+      card.save({}, {
+        success: function () {
+          that.model.cards().add(card)
+          that.render();
+        }
+      });
+      $(".card-new").addClass("hidden");
+      $(".new-card-button").removeClass("hidden");
+    }
   }
 });
