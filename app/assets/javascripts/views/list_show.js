@@ -39,8 +39,32 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend({
     var renderedContent = this.template({ list: this.model })
     this.$el.html(renderedContent);
     this.attachSubviews();
+    var fromList;
+    var toList;
+    var activeCard;
+    var that = this;
     $(".cards").sortable({
-      connectWith: ".cards"
+      
+      connectWith: ".cards",
+      
+      start: function (event, ui) {
+        activeCard = ui.item;
+        fromList = $(event.target).parent();
+      },
+      
+      over: function (event, ui) {
+        toList = $(event.target).parent();
+      },
+      
+      update: function (event, ui) {
+        if (fromList !== toList) {
+          fromList.cards().remove(activeCard);
+          toList.cards().add(activeCard);
+        }
+        var data = $(this).sortable("toArray");
+        //same as in board_show.js
+      }
+      
     });
     
     return this;

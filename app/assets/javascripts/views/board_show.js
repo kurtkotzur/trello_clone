@@ -42,7 +42,6 @@ TrelloClone.Views.BoardShow = Backbone.CompositeView.extend({
           var currentList = that.model.lists().get(id);
           currentList.set("ord", index);
           currentList.save();
-          console.log(index);
         });
       }
     });
