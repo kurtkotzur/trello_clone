@@ -12,6 +12,8 @@
 #
 
 class Card < ActiveRecord::Base
+  default_scope { order(:ord) }
+  
   belongs_to :list
   has_many :items
   has_many :card_assignments

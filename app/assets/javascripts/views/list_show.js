@@ -1,16 +1,20 @@
 TrelloClone.Views.ListShow = Backbone.CompositeView.extend({
+  className: "list list-group-item",
+  
   template: JST["list_show"],
+  
+  id: function () {
+    return this.model.get("id");
+  },
   
   events: {
     "click .delete-list": "deleteList",
     "click .new-card-button": "showForm",
-    "mouseenter": "handleMouseOver",
-    "mouseleave": "handleMouseOver"
+    // "mouseenter": "handleMouseOver",
+//     "mouseleave": "handleMouseOver"
   },
   
   initialize: function () {
-    this.$el.addClass("list");
-    this.$el.addClass("list-group-item");
     this.listenTo(this.model, "sync", this.render);
     this.listenTo(this.model.cards(), "add", this.addCard);
     
@@ -35,7 +39,9 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend({
     var renderedContent = this.template({ list: this.model })
     this.$el.html(renderedContent);
     this.attachSubviews();
-    $(".cards").sortable();
+    $(".cards").sortable({
+      connectWith: ".cards"
+    });
     
     return this;
   },
@@ -46,6 +52,7 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend({
   
   showForm: function (event) {
     $(event.currentTarget).addClass("hidden");
-    $(event.currentTarget).prev().removeClass("hidden");
+    this.$('.card-new').removeClass('hidden');
+    this.$('#card-description-input').focus();
   }
 });

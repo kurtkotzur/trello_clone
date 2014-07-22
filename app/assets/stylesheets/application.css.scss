@@ -17,8 +17,12 @@
 @import "font-awesome";
 
 .ui-sortable-helper {
-  transform: rotate(8deg);
-  box-shadow: 10px 5px 10px #888888;
+  transform: rotate(5deg);
+  box-shadow: 7px 5px 15px #888888;
+}
+
+.cards {
+  min-height: 25px;
 }
 
 .list {
