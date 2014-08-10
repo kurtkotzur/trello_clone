@@ -1,6 +1,9 @@
 <span class="glyphicon glyphicon-remove delete-list "></span>
-<h4><%= list.escape("title") %></h4>
-
+<div class="panel-heading">
+<h4 class="list-title"><%= list.escape("title") %></h4>
+</div>
+<div class="panel-body">
 <div class="cards list-group"></div>
 <form class="card-new list-group-item  new-card-form hidden"></form>
 <button class="btn btn-info btn-xs new-card-button">Add card</button>
+</div>

@@ -28,7 +28,6 @@
 .list {
   width: 220px;
   margin: 5px;
-  background-color: ghostwhite;
 }
 
 .list-new {
@@ -51,4 +50,52 @@
 
 .delete-board, .delete-card, .delete-list {
   float: right;
+}
+
+#guest-button {
+  margin-top: 10px;
+}
+
+.add-list {
+  margin-top: 5px;
+  float: left;
+}
+
+.navbar-brand {
+  color: white !important;
+}
+
+.navbar {
+  border-radius: 0px !important;
+}
+
+.panel-heading {
+  color: white !important;
+  background-color: black !important;
+  height: 40px;
+}
+
+.panel {
+  border-color: black;
+}
+
+.list-group-item {
+  border-color: black !important;
+}
+
+.list-title {
+  margin-top: -4px;
+}
+
+.delete-list {
+  color: white;
+  margin: 5px;
+}
+
+.new-card-button {
+  margin-left: 2px;
+}
+
+.username, .dropdown {
+  color: white !important;
 }
